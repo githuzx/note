@@ -1,2 +1,35 @@
-1.mvp:
-2.
+//代码规范
+1.基本规范
+drawable: bg   def   div
+layout:   list img   chk   progress   seek   group   rbtn
+strings:  tab  desc  dialog  
+colors:   normal pressed selected disable text bg div 
+
+2.架构规范
+包名全部小写,连续的单词只是简单地连接起来,不使用下划线
+一级包名com
+二级包名公司
+三级包名根据应用进行命名
+四级包名为模块名或层级名
+
+
+//问题答疑
+1.Adapter
+item控件抢占焦点
+  1.android:focusable="false" 
+  2.父布局设置android:descendantFocusability="blocksDescendants"//强制获取焦点|不让focus往下传递
+ListView复用导致内容错乱[CheckBox]
+  1.bean|private boolean isChecked;↑ ①cb.setChecked(bean.isChecked());                      ②onClick:bean.setChecked(cb.isChecked());
+  2.↑List<Integer> list;//存储       ①private List<Integer> mPos=new ArrayList<Integer>();  ②if(mPos.contains(holder.getPosition())){cb.setChecked(true);}
+                                     ③onClick:if(cb.isChecked)？mPos.add(holder.getPosition());：mPos.remove((Integer)holder.getPosition);
+
+									 
+//其它
+1.应用分发
+fir
+pre.im
+蒲公英
+
+
+
+

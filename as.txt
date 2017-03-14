@@ -1,0 +1,39 @@
+1.文档注释(File->Settings->Editor->File and Code Templates->Includes)
+/**
+ * @author huzx
+ * @time ${DATE} ${TIME}
+ */
+
+2.svn:ignore
+.gradle
+.idea
+build
+local.properties
+*.iml
+InfantEduParent/build
+easeui/build
+
+3.常见错误解决方案
+1.Error:Excution failed for task
+        'transformResourcesWithMergeJavaResForDebug com.android.bui'
+  解决-编译报错:在build.gradle中添加packagingOptions
+                {exclude'meta-inf/dependencies|notice|license'}  
+  解决-启动报错:transformException:ZipException
+                两个库中存在相同的类
+2.修改项目minSdkVersion出现style文件找不到
+  解决:compileSdkVersion版本是多少,appcompat-v7就是啥版本
+3.finished with non-zero exit value 2
+  解决：在build.gradle里面添加{multiDexEnabled true}
+4.finshed with non-zero exit value 1    
+  解决-transformException:导入的依赖出现重复造成的
+  解决-processException:buildToolsVersion版本太高(24需要jdk1.8)               
+5.Error:Excution failed for task 'processDebugManifest'
+        Manifest merger failed:min 14 cannot be smaller than version
+  解决:引入的第三方库最低支持版本高于我们项目的最低支持版本
+       <uses-sdk tool:overrideLibrary="x.x.a,x.x.b"/>
+	   目的为了项目中的menifest和第三方menifest合并时可以忽略最低版本限制 
+6.Gradle DSL method not found:'android()'
+  解决-Gradle settings|Apply Gradle plugin:配置build.gradle
+  解决-source1.6中不支持diamind运算符:设置module Properties
+7.org.json.JSONException:value of type cannot be converted to JSONObject
+  解决：json串头部出现字符："\ufeff" 解决方法

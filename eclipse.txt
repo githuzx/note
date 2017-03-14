@@ -1,0 +1,17 @@
+1.ÎÄµµ×¢ÊÍ(Window->Preferences->Java->Code Style->Code Templates->Code->New Java files)
+${filecomment}
+${package_declaration}
+/**
+ * @author huzx
+ * @time ${date} ${time}
+ */
+${typecomment}
+${type_declaration}
+
+2.svn:ignore
+.classpath
+.project
+.settings
+bin
+gen
+libs
