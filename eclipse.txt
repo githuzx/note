@@ -1,4 +1,4 @@
-1.ÎÄµµ×¢ÊÍ(Window->Preferences->Java->Code Style->Code Templates->Code->New Java files)
+1.æ–‡æ¡£æ³¨é‡Š(Window->Preferences->Java->Code Style->Code Templates->Code->New Java files)
 ${filecomment}
 ${package_declaration}
 /**
